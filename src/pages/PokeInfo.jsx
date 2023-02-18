@@ -3,6 +3,7 @@ import './styles/pokeInfo.css'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import colors from '../utils/colorsPokemon'
+import Header from '../components/pokedex/shared/Header'
 
 const PokeInfo = () => {
 
@@ -23,6 +24,9 @@ const PokeInfo = () => {
 
   return (
     <div className='card__info'>
+
+      <Header />
+
       <div
         style={{ background: `linear-gradient(0deg, white 0 80%, ${colors[typeColor]?.first} 80% 84%, ${colors[typeColor]?.second} 88% 92%, ${colors[typeColor]?.third} 96% 100%` }}
         className="content__poke__info">

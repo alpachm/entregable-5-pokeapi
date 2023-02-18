@@ -1,5 +1,4 @@
 .card__info {
-    padding: 2rem 0;
     text-transform: capitalize;
     color: var(--black);
 }
@@ -8,6 +7,7 @@
     width: 90%;
     max-width: 800px;
     margin: auto;
+    margin: 2rem auto;
 
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.196);
 }
@@ -101,4 +101,8 @@
 
 .bar {
     height: 30px;
+}
+
+hr {
+    margin: 2rem 0;
 }
