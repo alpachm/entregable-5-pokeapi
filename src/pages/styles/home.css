@@ -1,0 +1,89 @@
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 15vh;
+}
+
+.content__home {
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.content__home h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--light-red);
+    margin-top: 1.5rem;
+}
+
+.content__home p {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+form {
+    display: grid;
+}
+
+input,
+button {
+    height: 50px;
+    border: none;
+}
+
+input {
+    background: var(--white);
+    box-shadow: 0 2px 5px 0 rgba(130, 130, 130, 0.311);
+    padding: 0 20px;
+}
+
+input::placeholder {
+    font-size: 1.5rem;
+}
+
+button {
+    background: var(--light-red);
+    color: var(--white);
+    padding: 0 10px;
+    font-size: 1.5rem;
+}
+
+
+footer {
+    min-height: 15vh;
+    width: 100%;
+    background: linear-gradient(180deg, red 0 60%, rgb(25, 25, 25) 60% 100%);
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.circleFooter {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 10px solid black;
+    background: white;
+    padding: 2px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.childCircle {
+    width: 80%;
+    height: 80%;
+    background: rgb(64, 64, 64);
+    border-radius: 50%;
+    border: 10px solid black;
+}

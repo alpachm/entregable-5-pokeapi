@@ -1,0 +1,104 @@
+.card__info {
+    padding: 2rem 0;
+    text-transform: capitalize;
+    color: var(--black);
+}
+
+.content__poke__info {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.196);
+}
+
+.top__card__info {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.top__card__info img {
+    width: 60%;
+}
+
+.top__card__info span {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 3px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    margin-bottom: 1rem;
+}
+
+.top__card__info h1 {
+    font-size: 2.5rem;
+}
+
+.middle__card__info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.characteristics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.box__char {
+    display: grid;
+    gap: .3rem;
+}
+
+.box__char span {
+    color: var(--light-black);
+}
+
+.box__char p {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.type__ability {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 2rem;
+}
+
+.box__t-a {
+    display: grid;
+    gap: .5rem;
+}
+
+.types-abilitys {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.types-abilitys span {
+    font-size: 1.3rem;
+    color: var(--black);
+    padding: 5px 10px;
+    border: 1px solid var(--light-black);
+}
+
+.bottom__card__info {
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.text__bar__stat {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.bar {
+    height: 30px;
+}
