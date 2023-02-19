@@ -6,17 +6,18 @@ import CardPokemon from "../components/pokedex/CardPokemon";
 import Header from "../components/pokedex/shared/Header";
 import { useNavigate } from "react-router-dom";
 import SelectTypes from "../components/pokedex/SelectTypes";
+import Pagination from "../components/pokedex/Pagination";
 
 const Pokedex = () => {
   const { trainerName } = useSelector((state) => state);
   const [pokemons, setPokemons] = useState();
   const [selectValue, setSelectValue] = useState("allpokemons");
   const [currentPage, setCurrentePage] = useState(1);
-  const pokemonsPerPage = 6;
+  const pokemonsPerPage = 10;
 
   useEffect(() => {
     if (selectValue === "allpokemons") {
-      const url = "https://pokeapi.co/api/v2/pokemon?limit=8&offset=0";
+      const url = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
       axios
         .get(url)
         .then((res) => setPokemons(res.data))
@@ -39,6 +40,10 @@ const Pokedex = () => {
     indexOfFistPokemon,
     indexOfLastPokemon
   );
+
+  const paginate = (pageNumber) => {
+    setCurrentePage(pageNumber);
+  };
 
   const navigate = useNavigate();
 
@@ -63,6 +68,12 @@ const Pokedex = () => {
           <button>Search</button>
         </form>
         <SelectTypes setSelectValue={setSelectValue} />
+        <Pagination
+          pokemonsPerPage={pokemonsPerPage}
+          totalPokemons={pokemons?.results.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
         <div className="box__cards__pokemons">
           {currentPokemons?.map((pokemon) => (
             <CardPokemon key={pokemon.url} pokemonUrl={pokemon.url} />
