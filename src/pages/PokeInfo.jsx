@@ -53,7 +53,7 @@ const PokeInfo = () => {
 
         <div className="card__btn--return">
           <button onClick={onClick}>
-            <i class="bx bx-arrow-back"></i>
+            <i className="bx bx-arrow-back"></i>
             <span>Return to Pokedex</span>
           </button>
         </div>
@@ -127,7 +127,7 @@ const PokeInfo = () => {
             <h1>Stats</h1>
 
             {pokemonSelect?.stats.map((stat) => (
-              <div className="stat__bar">
+              <div className="stat__bar" key={stat.stat.name}>
                 <div className="text__bar__stat">
                   <span>{stat.stat.name}</span>
                   <p>{stat.base_stat}/150</p>
