@@ -13,7 +13,7 @@ const Pokedex = () => {
   const [pokemons, setPokemons] = useState();
   const [selectValue, setSelectValue] = useState("allpokemons");
   const [currentPage, setCurrentePage] = useState(1);
-  const pokemonsPerPage = 10;
+  const [pokemonsPerPage, setPokemonsPerPage] = useState(10);
 
   useEffect(() => {
     if (selectValue === "allpokemons") {
@@ -33,7 +33,6 @@ const Pokedex = () => {
     }
   }, [selectValue]);
 
-  console.log(pokemons);
   const indexOfLastPokemon = currentPage * pokemonsPerPage;
   const indexOfFistPokemon = indexOfLastPokemon - pokemonsPerPage;
   const currentPokemons = pokemons?.results.slice(
@@ -67,7 +66,10 @@ const Pokedex = () => {
           <input id="pokemon" type="text" placeholder="Search a pokemon..." />
           <button>Search</button>
         </form>
-        <SelectTypes setSelectValue={setSelectValue} />
+        <SelectTypes
+          setSelectValue={setSelectValue}
+          setPokemonsPerPage={setPokemonsPerPage}
+        />
         <Pagination
           pokemonsPerPage={pokemonsPerPage}
           totalPokemons={pokemons?.results.length}
