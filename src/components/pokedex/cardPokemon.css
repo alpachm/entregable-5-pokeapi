@@ -2,14 +2,24 @@
     border: 15px solid;
     border-radius: 10px;
     text-transform: capitalize;
-
     cursor: pointer;
-
-    transition: transform .05s;
+    transition: box-shadow 0.5s;
 }
 
 .card__pokemon:hover {
-    transform: scale(.98);
+    box-shadow: 10px 5px 5px rgba(160, 149, 149, 0.719);
+}
+
+.card__img {
+    transition: transform 0.5s ;
+}
+
+.card__img:hover {
+    transform: scale(1.3);
+}
+
+.pokemon__name {
+    margin-top: 20px;
 }
 
 .top__card {

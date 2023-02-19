@@ -1,26 +1,46 @@
 import axios from 'axios'
 import './styles/pokeInfo.css'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import colors from '../utils/colorsPokemon'
 import Header from '../components/pokedex/shared/Header'
+import './styles/pokeInfoError.css'
+
 
 const PokeInfo = () => {
 
   const { id } = useParams()
-
   const [pokemonSelect, setPokemonSelect] = useState()
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
 
     axios.get(url)
-      .then(res => setPokemonSelect(res.data))
-      .catch(err => console.log(err))
+      .then(res =>{
+         setPokemonSelect(res.data)
+         setHasError(false)
+        })
+      .catch(err => {
+        setHasError(true)
+        console.log(err)
+      })
 
-  }, [])
+  }, [id])
+  const navigate = useNavigate()
+
+  const onClick = () =>{
+    navigate("/pokedex/")
+  }
 
   const typeColor = pokemonSelect?.types[0].type.name
+  if(hasError){
+    return <div className='error__poke-info'> 
+              {/* <img className='img__error' src="./images/pikachu-triste_auuu.1280.webp" alt="photo" /> */}
+              <h1><span className='x__error'>X</span>the pokemon <span className='poke__name-error'>{id}</span> does not exist<span className='x__error'>X</span></h1>
+              <button className='btn__error' onClick={onClick}>return</button>
+            </div>
+    }else{ 
 
   return (
     <div className='card__info'>
@@ -109,6 +129,7 @@ const PokeInfo = () => {
       </div>
     </div>
   )
+  }
 }
 
 export default PokeInfo

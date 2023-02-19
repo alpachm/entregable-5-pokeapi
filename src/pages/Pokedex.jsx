@@ -4,22 +4,39 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import CardPokemon from '../components/pokedex/CardPokemon'
 import Header from '../components/pokedex/shared/Header'
+import { useNavigate } from 'react-router-dom'
+import SelectTypes from '../components/pokedex/SelectTypes'
 
 const Pokedex = () => {
 
   const { trainerName } = useSelector(state => state)
-
   const [pokemons, setPokemons] = useState()
+  const [selectValue, setSelectValue] = useState("allpokemons")
 
   useEffect(() => {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=200&offset=0`
-
+    if(selectValue === "allpokemons"){
+    const url = 'https://pokeapi.co/api/v2/pokemon?limit=8&offset=0'
     axios.get(url)
-      .then(res => setPokemons(res.data))
-      .catch(err => console.log(err))
-  }, [])
+    .then(res => setPokemons(res.data))
+    .catch(err => console.log(err))
+   }else{
+    axios.get(selectValue)
+    .then(res => {
+      const results = res.data.pokemon.map(e => e.pokemon)
+      setPokemons({results})
+    })
+    .catch(err => console.log(err))
+   }
+  }, [selectValue])
 
-  const handleSubmit = () => {
+
+  const navigate = useNavigate()
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const inputValue = e.target.pokemon.value.trim().toLowerCase()
+    navigate(`/pokedex/${inputValue}`)
+    e.target.pokemon.value = ""
 
   }
 
@@ -32,10 +49,11 @@ const Pokedex = () => {
         <h3><span>Welcome {trainerName}</span>, here you can find your favorite pokemon</h3>
 
         <form onSubmit={handleSubmit}>
-          <input type="text" placeholder='Search a pokemon...' />
+          <input id='pokemon' type="text" placeholder='Search a pokemon...' />
           <button>Search</button>
         </form>
-
+        <SelectTypes setSelectValue={setSelectValue}
+        />
         <div className="box__cards__pokemons">
           {
             pokemons?.results.map(pokemon => (

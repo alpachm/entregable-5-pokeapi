@@ -34,8 +34,8 @@ const CardPokemon = ({ pokemonUrl }) => {
       }}
       className="card__pokemon">
       <div className="top__card">
-        <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
-        <h1 style={{ color: colors[typeColor]?.third }} >{pokemon?.name}</h1>
+        <img className="card__img" src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+        <h1 className="pokemon__name" style={{ color: colors[typeColor]?.third }} >{pokemon?.name}</h1>
         <h2>{typePoke.join(' / ')}</h2>
         <span>Type</span>
       </div>
