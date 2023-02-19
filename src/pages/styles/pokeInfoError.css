@@ -4,14 +4,15 @@
     display: grid;
     align-items: center;
     text-align: center;
-    background-image: url(/public/images/pikachu-triste_auuu.1280.webp);
+    /* background-image: url(/public/images/pikachu-triste_auuu.1280.webp); */
+    background-image: url(/public/images/pikachu-pensando.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 .error__poke-info h1{
     background-color: rgba(54, 116, 116, 0.651);
-    color: white;
+    color: rgb(14, 37, 168);
 }
 
 .poke__name-error {
