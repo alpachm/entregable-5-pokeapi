@@ -25,6 +25,9 @@ const PokeInfo = () => {
         console.log(err);
       });
   }, [id]);
+
+  console.log(pokemonSelect);
+
   const navigate = useNavigate();
 
   const onClick = () => {
@@ -140,6 +143,13 @@ const PokeInfo = () => {
                 ></div>
               </div>
             ))}
+          </div>
+          <div className="card__moves">
+            { 
+            pokemonSelect?.moves.map(move => (
+              <h2 className="name__move">{move.move.name}</h2>
+            ))
+            }
           </div>
         </div>
       </div>
