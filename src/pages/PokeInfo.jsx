@@ -51,6 +51,13 @@ const PokeInfo = () => {
       <div className="card__info">
         <Header />
 
+        <div className="card__btn--return">
+          <button onClick={onClick}>
+            <i class="bx bx-arrow-back"></i>
+            <span>Return to Pokedex</span>
+          </button>
+        </div>
+
         <div
           style={{
             background: `linear-gradient(0deg, white 0 80%, ${colors[typeColor]?.first} 80% 84%, ${colors[typeColor]?.second} 88% 92%, ${colors[typeColor]?.third} 96% 100%`,
