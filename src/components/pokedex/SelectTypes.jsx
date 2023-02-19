@@ -32,7 +32,7 @@ const SelectTypes = ({ setSelectValue, setPokemonsPerPage }) => {
       </select>
 
       <select onChange={handleAmountByPage} className="select__filter">
-        <option>Pokemons per Page</option>
+        <option>How many pokemons you want to see?</option>
         {pokesByPage.map((amountByPage) => (
           <option key={amountByPage} value={amountByPage}>
             {amountByPage}
