@@ -70,18 +70,23 @@ const PokeInfo = () => {
        
 
         <div
-          style={{
-            background: `linear-gradient(0deg, white 0 88%, ${colors[typeColor]?.first} 88% 91%, ${colors[typeColor]?.second} 93% 96%, ${colors[typeColor]?.third} 98% 100%`,
-          }}
+          // style={{
+          //   background: `linear-gradient(0deg, white 0 88%, ${colors[typeColor]?.first} 88% 91%, ${colors[typeColor]?.second} 93% 96%, ${colors[typeColor]?.third} 98% 100%`,
+          // }}
           className="content__poke__info"
         >
           <div className="top__card__info">
-            <img
+            <div className="content__img-info"
+            style={{
+              background:`linear-gradient(0deg, var(--light-white) 0 20%, ${colors[typeColor]?.first} 22% 40%, ${colors[typeColor]?.second} 43% 65%, ${colors[typeColor]?.third} 68% 100%`,
+            }}>
+            <img className="img__info" 
               src={
                 pokemonSelect?.sprites.other["official-artwork"].front_default
               }
               alt=""
             />
+            </div>
             <span style={{ color: colors[typeColor]?.third }}>#{id}</span>
             <h1 style={{ color: colors[typeColor]?.third }}>
               {pokemonSelect?.name}

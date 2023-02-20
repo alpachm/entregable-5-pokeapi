@@ -38,10 +38,20 @@
   flex-flow: column wrap;
   align-items: center;
 }
-
-.top__card__info img {
-  width: 60%;
+/**/
+.img__info {
+  max-width: 550px;
+  margin: 0 auto;
 }
+
+.content__img-info {
+  width: 100%;
+}
+/**/
+
+/* .top__card__info img {
+  width: 100%;
+} */
 
 .top__card__info span {
   font-size: 2rem;
@@ -85,7 +95,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   margin-top: 2rem;
 }
 
@@ -138,11 +147,20 @@ hr {
 }
 
 .name__move {
-  background-color: rgb(228, 227, 227);
+  background-color: rgb(199, 199, 199);
   border-radius: 10px;
   transition: transform 2s;
 }
 
 .name__move:hover {
   transform:rotateX(360deg);
+}
+
+@media ( max-width: 500px) {
+  .type__ability {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: -20px;
+  }
+  
 }
