@@ -157,7 +157,9 @@ const PokeInfo = () => {
               </div>
             ))}
           </div>
+          <h2 className="tittle__move">Special moves</h2>
           <div className="card__moves">
+            
             {
               pokemonSelect?.moves.map(move => (
                 <h2 className="name__move">{move.move.name}</h2>
