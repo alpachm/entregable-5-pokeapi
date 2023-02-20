@@ -133,7 +133,6 @@ hr {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-auto-rows: 1fr;
   padding: 2rem;
-  
   text-align: center;
   gap: 0.5rem;
 }
@@ -141,4 +140,9 @@ hr {
 .name__move {
   background-color: rgb(228, 227, 227);
   border-radius: 10px;
+  transition: transform 2s;
+}
+
+.name__move:hover {
+  transform:rotateX(360deg);
 }

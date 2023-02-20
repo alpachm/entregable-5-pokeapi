@@ -60,6 +60,7 @@ const PokeInfo = () => {
             <span>Return to Pokedex</span>
           </button>
         </div>
+       
 
         <div
           style={{
