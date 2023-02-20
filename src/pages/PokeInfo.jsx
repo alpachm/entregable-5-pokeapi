@@ -5,15 +5,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import colors from "../utils/colorsPokemon";
 import Header from "../components/pokedex/shared/Header";
 import "./styles/pokeInfoError.css";
+import IsLoading from "../components/pokedex/shared/IsLoading";
 
 const PokeInfo = () => {
   const { id } = useParams();
   const [pokemonSelect, setPokemonSelect] = useState();
   const [hasError, setHasError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
 
+    setIsLoading(true)
     axios
       .get(url)
       .then((res) => {
@@ -23,10 +26,11 @@ const PokeInfo = () => {
       .catch((err) => {
         setHasError(true);
         console.log(err);
-      });
+      })
+      .finally(setTimeout(() => {
+        setIsLoading(false)
+      }, 2000))
   }, [id]);
-
-  console.log(pokemonSelect);
 
   const navigate = useNavigate();
 
@@ -35,7 +39,10 @@ const PokeInfo = () => {
   };
 
   const typeColor = pokemonSelect?.types[0].type.name;
-  if (hasError) {
+
+  if (isLoading) {
+    return <IsLoading />
+  } else if (hasError) {
     return (
       <div className="error__poke-info">
         {/* <img className='img__error' src="./images/pikachu-triste_auuu.1280.webp" alt="photo" /> */}
@@ -63,7 +70,7 @@ const PokeInfo = () => {
 
         <div
           style={{
-            background: `linear-gradient(0deg, white 0 80%, ${colors[typeColor]?.first} 80% 84%, ${colors[typeColor]?.second} 88% 92%, ${colors[typeColor]?.third} 96% 100%`,
+            background: `linear-gradient(0deg, white 0 88%, ${colors[typeColor]?.first} 88% 91%, ${colors[typeColor]?.second} 93% 96%, ${colors[typeColor]?.third} 98% 100%`,
           }}
           className="content__poke__info"
         >
@@ -145,10 +152,10 @@ const PokeInfo = () => {
             ))}
           </div>
           <div className="card__moves">
-            { 
-            pokemonSelect?.moves.map(move => (
-              <h2 className="name__move">{move.move.name}</h2>
-            ))
+            {
+              pokemonSelect?.moves.map(move => (
+                <h2 className="name__move">{move.move.name}</h2>
+              ))
             }
           </div>
         </div>
