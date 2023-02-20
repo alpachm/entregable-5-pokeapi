@@ -18,7 +18,7 @@ const Pagination = ({
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
-    }, 1000);
+    }, 500);
   }
 
   return (

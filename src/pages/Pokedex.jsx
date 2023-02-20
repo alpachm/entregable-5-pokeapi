@@ -28,9 +28,10 @@ const Pokedex = () => {
         .catch((err) => console.log(err))
         .finally(setTimeout(() => {
           setIsLoading(false)
-        }, 2000))
+        }, 1500))
     } else {
 
+      setIsLoading(true)
       axios
         .get(selectValue)
         .then((res) => {
@@ -38,6 +39,9 @@ const Pokedex = () => {
           setPokemons({ results });
         })
         .catch((err) => console.log(err))
+        .finally(setTimeout(() => {
+          setIsLoading(false)
+        }, 500))
     }
   }, [selectValue]);
 

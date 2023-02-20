@@ -29,7 +29,7 @@ const PokeInfo = () => {
       })
       .finally(setTimeout(() => {
         setIsLoading(false)
-      }, 2000))
+      }, 1500))
   }, [id]);
 
   const navigate = useNavigate();
