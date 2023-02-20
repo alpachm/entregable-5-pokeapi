@@ -1,0 +1,33 @@
+.is__loading {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.is__loading img {
+    width: 150px;
+
+    animation: loading__move 2s infinite;
+}
+
+@keyframes loading__move {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.is__loading h1 {
+    font-size: 2.5rem;
+}
