@@ -116,3 +116,8 @@ footer {
 .show-sun {
     display: block;
 }
+
+.input__home {
+    color: var(--black);
+    font-size: 1.3rem;
+}

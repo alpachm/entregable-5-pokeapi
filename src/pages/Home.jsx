@@ -33,7 +33,7 @@ const Home = ({ darkMode, setDarkMode }) => {
                 <p>Give me your name to start</p>
 
                 <form onSubmit={handleSubmit}>
-                    <input id='trainerName' type="text" placeholder='Your name...' />
+                    <input className='input__home' id='trainerName' type="text" placeholder='Your name...' />
                     <button>Start</button>
                 </form>
             </div>
