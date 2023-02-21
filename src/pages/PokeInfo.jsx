@@ -67,7 +67,7 @@ const PokeInfo = () => {
             <span>Return to Pokedex</span>
           </button>
         </div>
-       
+
 
         <div
           // style={{
@@ -77,15 +77,15 @@ const PokeInfo = () => {
         >
           <div className="top__card__info">
             <div className="content__img-info"
-            style={{
-              background:`linear-gradient(0deg, var(--light-white) 0 20%, ${colors[typeColor]?.first} 22% 40%, ${colors[typeColor]?.second} 43% 65%, ${colors[typeColor]?.third} 68% 100%`,
-            }}>
-            <img className="img__info" 
-              src={
-                pokemonSelect?.sprites.other["official-artwork"].front_default
-              }
-              alt=""
-            />
+              style={{
+                background: `linear-gradient(0deg, var(--light-white) 0 20%, ${colors[typeColor]?.first} 22% 40%, ${colors[typeColor]?.second} 43% 65%, ${colors[typeColor]?.third} 68% 100%`,
+              }}>
+              <img className="img__info"
+                src={
+                  pokemonSelect?.sprites.other["official-artwork"].front_default
+                }
+                alt=""
+              />
             </div>
             <span style={{ color: colors[typeColor]?.third }}>#{id}</span>
             <h1 style={{ color: colors[typeColor]?.third }}>
@@ -115,7 +115,7 @@ const PokeInfo = () => {
                     <span
                       style={{
                         background: colors[typeColor].first,
-                        color: "var(--white)",
+                        color: "white",
                         border: "none",
                       }}
                       key={type.type.url}
@@ -159,7 +159,7 @@ const PokeInfo = () => {
           </div>
           <h2 className="tittle__move">Special moves</h2>
           <div className="card__moves">
-            
+
             {
               pokemonSelect?.moves.map(move => (
                 <h2 className="name__move">{move.move.name}</h2>

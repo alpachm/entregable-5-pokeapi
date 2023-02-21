@@ -3,10 +3,20 @@
 :root {
     --red: red;
     --light-red: rgb(209, 52, 52);
+    --text-color-black: black;
     --black: rgb(67, 67, 67);
     --light-black: rgb(151, 151, 151);
     --white: white;
     --light-white: rgb(229, 229, 229);
+}
+
+.dark__mode {
+    --light-white: rgb(41, 41, 41);
+    --light-red: rgb(46, 67, 228);
+    --text-color-black: rgb(232, 232, 232);
+    --white: transparent;
+    --light-black: rgb(241, 241, 241);
+    --black: rgb(219, 219, 219);
 }
 
 * {

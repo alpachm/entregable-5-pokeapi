@@ -16,7 +16,8 @@
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: red;
+  background: var(--light-red);
+  ;
   color: #eee;
   border-color: #eee;
 }

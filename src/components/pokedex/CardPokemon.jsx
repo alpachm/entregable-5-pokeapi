@@ -29,7 +29,7 @@ const CardPokemon = ({ pokemonUrl }) => {
     <div
       onClick={handleClick}
       style={{
-        background: `linear-gradient(0deg, white 0 65%, ${colors[typeColor]?.first} 65% 70%, ${colors[typeColor]?.second} 80% 85%, ${colors[typeColor]?.third} 95% 100%`,
+        background: `linear-gradient(0deg, var(--white) 0 65%, ${colors[typeColor]?.first} 65% 70%, ${colors[typeColor]?.second} 80% 85%, ${colors[typeColor]?.third} 95% 100%`,
         borderColor: colors[typeColor]?.second
       }}
       className="card__pokemon">

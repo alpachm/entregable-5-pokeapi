@@ -10,6 +10,11 @@
   font-size: 1rem;
 }
 
+.card__btn--return span,
+.card__btn--return i {
+  color: white;
+}
+
 .card__btn--return button {
   border-radius: 5px;
   display: flex;
@@ -38,6 +43,7 @@
   flex-flow: column wrap;
   align-items: center;
 }
+
 /**/
 .img__info {
   max-width: 550px;
@@ -47,6 +53,7 @@
 .content__img-info {
   width: 100%;
 }
+
 /**/
 
 /* .top__card__info img {
@@ -147,22 +154,23 @@ hr {
 }
 
 .name__move {
-  background-color: rgb(199, 199, 199);
+  background-color: var(--light-black);
+  color: black;
   border-radius: 10px;
   transition: transform 2s;
 }
 
 .name__move:hover {
-  transform:rotateX(360deg);
+  transform: rotateX(360deg);
 }
 
-@media ( max-width: 500px) {
+@media (max-width: 500px) {
   .type__ability {
     flex-direction: column;
     gap: 2rem;
     margin-bottom: -20px;
   }
-  
+
 }
 
 .tittle__move {

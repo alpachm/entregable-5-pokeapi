@@ -18,11 +18,16 @@
     font-weight: 700;
     color: var(--light-red);
     margin-top: 1.5rem;
+
+    transition: color .3s;
 }
 
 .content__home p {
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
+    color: var(--text-color-black);
+
+    transition: color .3s;
 }
 
 form {
@@ -47,16 +52,18 @@ input::placeholder {
 
 button {
     background: var(--light-red);
-    color: var(--white);
+    color: white;
     padding: 0 10px;
     font-size: 1.5rem;
+
+    transition: background .3s;
 }
 
 
 footer {
     min-height: 15vh;
     width: 100%;
-    background: linear-gradient(180deg, red 0 60%, rgb(25, 25, 25) 60% 100%);
+    background: linear-gradient(180deg, var(--light-red) 0 60%, rgb(25, 25, 25) 60% 100%);
 
     position: fixed;
     bottom: 0;
@@ -86,4 +93,26 @@ footer {
     background: rgb(64, 64, 64);
     border-radius: 50%;
     border: 10px solid black;
+}
+
+.icons__mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    font-size: 2rem;
+    color: var(--light-red);
+    cursor: pointer;
+}
+
+.hide-moon {
+    display: none;
+}
+
+.bxs-sun {
+    display: none;
+}
+
+.show-sun {
+    display: block;
 }

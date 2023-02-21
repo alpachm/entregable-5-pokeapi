@@ -1,6 +1,6 @@
  header {
      min-height: 15vh;
-     background: linear-gradient(180deg, red 0 65%, #191919 55% 100%);
+     background: linear-gradient(180deg, var(--light-red) 0 65%, #191919 55% 100%);
      padding: .5rem;
      display: flex;
      justify-content: start;
@@ -8,9 +8,9 @@
  }
 
  .header__img {
-    width: 500px;
-    min-width: 200px;
-    
+     width: 500px;
+     min-width: 200px;
+
  }
 
 

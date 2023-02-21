@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setTrainerName } from '../store/slices/trainerName.slice'
 
-const Home = () => {
+const Home = ({ darkMode, setDarkMode }) => {
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -21,6 +21,12 @@ const Home = () => {
 
     return (
         <div className='home'>
+
+            <div className="icons__mode">
+                <i onClick={() => setDarkMode(true)} className={`bx bxs-moon ${darkMode && 'hide-moon'}`}></i>
+                <i onClick={() => setDarkMode(false)} className={`bx bxs-sun ${darkMode && 'show-sun'}`} ></i>
+            </div>
+
             <div className="content__home">
                 <img src="./images/pokedex.png" alt="" />
                 <h1>Hi trainer!</h1>

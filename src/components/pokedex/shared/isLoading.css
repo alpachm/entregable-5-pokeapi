@@ -8,6 +8,10 @@
     gap: 2rem;
 }
 
+.is__loading h1 {
+    color: var(--text-color-black);
+}
+
 .is__loading img {
     width: 150px;
 
