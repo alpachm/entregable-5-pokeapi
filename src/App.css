@@ -2,7 +2,7 @@
   background: var(--light-white);
   overflow: hidden;
 
-  transition: background .3s;
+  transition: background 0.3s;
 }
 
 .select__filter {
@@ -13,4 +13,11 @@
   margin-left: 25%;
   color: rgb(70, 70, 70);
   letter-spacing: 0.5rem;
+}
+
+.select__numPokemons p {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
 }

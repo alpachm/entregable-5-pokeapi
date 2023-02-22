@@ -6,6 +6,7 @@ const SelectTypes = ({
   setPokemonsPerPage,
   currentPage,
   setCurrentePage,
+  pokemonsPerPage,
 }) => {
   const [types, setTypes] = useState();
   const pokesByPage = [4, 8, 12, 16, 20];
@@ -39,14 +40,21 @@ const SelectTypes = ({
         ))}
       </select>
 
-      <select onChange={handleAmountByPage} className="select__filter">
-        <option value="10">How many pokemons you want to see?</option>
-        {pokesByPage.map((amountByPage) => (
-          <option key={amountByPage} value={amountByPage}>
-            {amountByPage}
-          </option>
-        ))}
-      </select>
+      <div className="select__numPokemons">
+        <p>How many pokemons you want to see?: </p>
+        <select
+          onChange={handleAmountByPage}
+          className="select__filter"
+          value={pokemonsPerPage}
+        >
+          <option value="10">10(Default)</option>
+          {pokesByPage.map((amountByPage) => (
+            <option key={amountByPage} value={amountByPage}>
+              {amountByPage}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 };

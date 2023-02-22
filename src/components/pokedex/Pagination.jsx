@@ -6,7 +6,7 @@ const Pagination = ({
   totalPokemons,
   paginate,
   currentPage,
-  setIsLoading
+  setIsLoading,
 }) => {
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalPokemons / pokemonsPerPage); i++) {
@@ -14,12 +14,12 @@ const Pagination = ({
   }
 
   const handleClick = (number) => {
-    paginate(number)
-    setIsLoading(true)
+    paginate(number);
+    setIsLoading(true);
     setTimeout(() => {
-      setIsLoading(false)
+      setIsLoading(false);
     }, 500);
-  }
+  };
 
   return (
     <nav className="pagination">
