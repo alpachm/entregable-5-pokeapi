@@ -15,23 +15,24 @@ const Pokedex = () => {
   const [selectValue, setSelectValue] = useState("allpokemons");
   const [currentPage, setCurrentePage] = useState(1);
   const [pokemonsPerPage, setPokemonsPerPage] = useState(10);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (selectValue === "allpokemons") {
       const url = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
 
-      setIsLoading(true)
+      setIsLoading(true);
       axios
         .get(url)
         .then((res) => setPokemons(res.data))
         .catch((err) => console.log(err))
-        .finally(setTimeout(() => {
-          setIsLoading(false)
-        }, 1500))
+        .finally(
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 1500)
+        );
     } else {
-
-      setIsLoading(true)
+      setIsLoading(true);
       axios
         .get(selectValue)
         .then((res) => {
@@ -39,9 +40,11 @@ const Pokedex = () => {
           setPokemons({ results });
         })
         .catch((err) => console.log(err))
-        .finally(setTimeout(() => {
-          setIsLoading(false)
-        }, 500))
+        .finally(
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 500)
+        );
     }
   }, [selectValue]);
 
@@ -69,37 +72,43 @@ const Pokedex = () => {
     <div className="pokedex">
       <Header />
 
-      {
-        isLoading ? <IsLoading />
-          : <div className="content__pokedex">
-            <h3>
-              <span>Welcome {trainerName}</span>, here you can find your favorite
-              pokemon
-            </h3>
+      {isLoading ? (
+        <IsLoading />
+      ) : (
+        <div className="content__pokedex">
+          <h3>
+            <span>Welcome {trainerName}</span>, here you can find your favorite
+            pokemon
+          </h3>
 
-            <form onSubmit={handleSubmit}>
-              <input className="input__pokedex" id="pokemon" type="text" placeholder="Search a pokemon..." />
-              <button>Search</button>
-            </form>
-            <SelectTypes
-              setSelectValue={setSelectValue}
-              setPokemonsPerPage={setPokemonsPerPage}
+          <form onSubmit={handleSubmit}>
+            <input
+              className="input__pokedex"
+              id="pokemon"
+              type="text"
+              placeholder="Search a pokemon..."
             />
-            <Pagination
-              pokemonsPerPage={pokemonsPerPage}
-              totalPokemons={pokemons?.results.length}
-              paginate={paginate}
-              currentPage={currentPage}
-              setIsLoading={setIsLoading}
-            />
-            <div className="box__cards__pokemons">
-              {currentPokemons?.map((pokemon) => (
-                <CardPokemon key={pokemon.url} pokemonUrl={pokemon.url} />
-              ))}
-            </div>
+            <button>Search</button>
+          </form>
+          <SelectTypes
+            setSelectValue={setSelectValue}
+            setPokemonsPerPage={setPokemonsPerPage}
+            currentPage={currentPage}
+          />
+          <Pagination
+            pokemonsPerPage={pokemonsPerPage}
+            totalPokemons={pokemons?.results.length}
+            paginate={paginate}
+            currentPage={currentPage}
+            setIsLoading={setIsLoading}
+          />
+          <div className="box__cards__pokemons">
+            {currentPokemons?.map((pokemon) => (
+              <CardPokemon key={pokemon.url} pokemonUrl={pokemon.url} />
+            ))}
           </div>
-      }
-
+        </div>
+      )}
     </div>
   );
 };

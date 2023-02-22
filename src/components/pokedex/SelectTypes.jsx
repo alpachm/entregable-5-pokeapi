@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const SelectTypes = ({ setSelectValue, setPokemonsPerPage }) => {
+const SelectTypes = ({ setSelectValue, setPokemonsPerPage, currentPage }) => {
   const [types, setTypes] = useState();
   const pokesByPage = [4, 8, 12, 16, 20];
   useEffect(() => {
@@ -18,6 +18,7 @@ const SelectTypes = ({ setSelectValue, setPokemonsPerPage }) => {
 
   const handleAmountByPage = (e) => {
     setPokemonsPerPage(Number(e.target.value));
+    currentPage;
   };
 
   return (
@@ -32,7 +33,7 @@ const SelectTypes = ({ setSelectValue, setPokemonsPerPage }) => {
       </select>
 
       <select onChange={handleAmountByPage} className="select__filter">
-        <option>How many pokemons you want to see?</option>
+        <option value="10">How many pokemons you want to see?</option>
         {pokesByPage.map((amountByPage) => (
           <option key={amountByPage} value={amountByPage}>
             {amountByPage}
