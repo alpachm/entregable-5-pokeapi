@@ -32,21 +32,24 @@ const SelectTypes = ({
 
   return (
     <div className="select">
-      <select
-        className="select__filter"
-        onChange={handleChange}
-        value={selectValue}
-      >
-        <option value="allpokemons">All pokemons</option>
-        {types?.results.map((type) => (
-          <option key={type.url} value={type.url}>
-            {type.name}
-          </option>
-        ))}
-      </select>
+      <div className="select__typePokemons">
+        <p>Select the pokemon's type:</p>
+        <select
+          className="select__filter"
+          onChange={handleChange}
+          value={selectValue}
+        >
+          <option value="allpokemons">All pokemons</option>
+          {types?.results.map((type) => (
+            <option key={type.url} value={type.url}>
+              {type.name}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <div className="select__numPokemons">
-        <p>How many pokemons you want to see?: </p>
+        <p>How many pokemons you want to see? </p>
         <select
           onChange={handleAmountByPage}
           className="select__filter"
