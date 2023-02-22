@@ -1,7 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const SelectTypes = ({ setSelectValue, setPokemonsPerPage, currentPage }) => {
+const SelectTypes = ({
+  setSelectValue,
+  setPokemonsPerPage,
+  currentPage,
+  setCurrentePage,
+}) => {
   const [types, setTypes] = useState();
   const pokesByPage = [4, 8, 12, 16, 20];
   useEffect(() => {
@@ -18,7 +23,9 @@ const SelectTypes = ({ setSelectValue, setPokemonsPerPage, currentPage }) => {
 
   const handleAmountByPage = (e) => {
     setPokemonsPerPage(Number(e.target.value));
-    currentPage;
+    if (currentPage > 5) {
+      setCurrentePage(1);
+    }
   };
 
   return (

@@ -94,6 +94,7 @@ const Pokedex = () => {
             setSelectValue={setSelectValue}
             setPokemonsPerPage={setPokemonsPerPage}
             currentPage={currentPage}
+            setCurrentePage={setCurrentePage}
           />
           <Pagination
             pokemonsPerPage={pokemonsPerPage}
