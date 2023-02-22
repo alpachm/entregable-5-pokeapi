@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const SelectTypes = ({
   setSelectValue,
+  selectValue,
   setPokemonsPerPage,
   currentPage,
   setCurrentePage,
@@ -31,7 +32,11 @@ const SelectTypes = ({
 
   return (
     <div className="select">
-      <select className="select__filter" onChange={handleChange}>
+      <select
+        className="select__filter"
+        onChange={handleChange}
+        value={selectValue}
+      >
         <option value="allpokemons">All pokemons</option>
         {types?.results.map((type) => (
           <option key={type.url} value={type.url}>
